@@ -1,8 +1,14 @@
-$body-bg:		lighten(#000, 93.5%);
-$navbar-default-bg: lighten(#000, 20%);
-$navbar-default-link-color: lighten(#000, 80%);
-$navbar-default-link-active-color: white;
-$navbar-default-link-hover-color: white;
-$jumbotron-bg: white;
+$body-bg:															lighten(#000, 93.5%);
+$font-family-sans-serif:							'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-default-bg: 									lighten(#000, 30%);
+$navbar-default-link-color: 					lighten(#000, 80%);
+$navbar-default-link-active-color: 		white;
+$navbar-default-link-hover-color: 		white;
+$navbar-default-brand-color: 					white;
+$jumbotron-bg: 												white;
 
 @import 'bootstrap';
+
+.center {
+	text-align: center;
+}
