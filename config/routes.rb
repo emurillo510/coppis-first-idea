@@ -1,4 +1,6 @@
 Cproject::Application.routes.draw do
+  resources :profiles
+
   devise_for :users
   root "pages#home"
   get "messages" => "pages#messages"
