@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20140603053657) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_brand",        default: false
     t.string   "name"
     t.string   "website"
     t.string   "location"
     t.string   "what_we_make"
     t.string   "brands_we_carry"
+    t.boolean  "is_brand",        default: false
   end
 
   create_table "users", force: true do |t|
