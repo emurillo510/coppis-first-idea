@@ -19,12 +19,14 @@
   <br>
 
   <p><b>Type</b></p>
+
   <div>
-    <%= f.check_box :is_brand %> <%= f.label :is_brand, "Brand" %> 
+    <%= f.radio_button :is_brand, true %> <%= f.label :is_brand, "Brand" %>
   </div>
-  <div>
-    <%= f.check_box :is_brand %> <%= f.label :is_brand, "Retailer" %> 
+  <div> 
+    <%= f.radio_button :is_brand, false %> <%= f.label :is_brand, "Retailer" %>
   </div>
+
   <br>
 
   <div class="field">
