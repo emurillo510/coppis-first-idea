@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603053657) do
+ActiveRecord::Schema.define(version: 20140604024520) do
 
   create_table "profiles", force: true do |t|
     t.string   "description"
@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20140603053657) do
     t.string   "what_we_make"
     t.string   "brands_we_carry"
     t.boolean  "is_brand",        default: false
+    t.integer  "user_id"
   end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
