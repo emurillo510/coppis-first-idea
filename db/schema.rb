@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(version: 20140604024520) do
 
   create_table "profiles", force: true do |t|
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
     t.string   "name"
     t.string   "website"
     t.string   "location"
     t.string   "what_we_make"
     t.string   "brands_we_carry"
+    t.string   "description"
     t.boolean  "is_brand",        default: false
-    t.integer  "user_id"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
