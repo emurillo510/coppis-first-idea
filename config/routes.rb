@@ -1,7 +1,7 @@
 Cproject::Application.routes.draw do
   resources :profiles
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   root "pages#home"
   get "messages" => "pages#messages"
   get "profile" => "pages#profile"
