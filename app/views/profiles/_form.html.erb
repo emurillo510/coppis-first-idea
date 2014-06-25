@@ -18,6 +18,14 @@
   </div>
   <br>
 
+  <div class="form-group">
+    <%= f.label :avatar, "Avatar"  %><br>
+    <%= image_tag @profile.avatar.url(:thumb) %>
+    <div>
+    <%= f.file_field :avatar %>
+    </div>
+  </div>
+
   <p><b>Type</b></p>
 
   <div>
