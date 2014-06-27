@@ -1,26 +1,14 @@
-<h1>Listing profiles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Avatar</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= image_tag profile.avatar.url(:medium) %></td>
-        <td><%= profile.name %></td>
-        <td><%= profile.description %></td>
-        <td><%= profile.location %></td>
-        <td><%= link_to 'Show', profile %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="cards" class="transitions-enabled">
+  <% @profiles.each do |profile| %>
+    <div class="box panel panel-default">
+      <%= image_tag profile.avatar.url(:medium) %>
+      <div class="panel-body">
+        <%= profile.name %><br>
+        <%= profile.description %><br>
+        <%= profile.location %><br>
+        <%= link_to 'Show', profile %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
