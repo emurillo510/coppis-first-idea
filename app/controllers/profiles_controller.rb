@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles
   def index
-    @profiles = Profile.all
+    @profiles = Profile.all.order(:name).paginate(:page => params[:page], :per_page => 8)
   end
 
   # GET /profiles/1

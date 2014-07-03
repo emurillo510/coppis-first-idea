@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if @profile.user == current_user %>
+	<%= link_to 'Edit Company Profile', edit_profile_path(@profile) %>
+<% end %>
+<br>
 <%= image_tag @profile.avatar.url(:medium) %>
 <p>
   <strong>Company Name:</strong>
@@ -9,7 +13,3 @@
   <strong>Description:</strong>
   <%= @profile.description %>
 </p>
-<% if @profile.user == current_user %>
-	<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<% end %>
-<%= link_to 'Back', profiles_path %>
