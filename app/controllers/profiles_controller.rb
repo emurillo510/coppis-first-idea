@@ -14,7 +14,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = current_user.profile.build
+    @user = current_user
+    @profile = @user.build_profile
   end
 
   # GET /profiles/1/edit
@@ -23,7 +24,7 @@ class ProfilesController < ApplicationController
 
   # POST /profiles
   def create
-    @profile = current_user.profile.build(profile_params)
+    @profile = current_user.build_profile(profile_params)
     if @profile.save
       redirect_to @profile, notice: 'Profile was successfully created.'
     else
@@ -52,7 +53,7 @@ class ProfilesController < ApplicationController
     end
 
     def correct_user
-      @profile = current_user.profile.find_by(id: params[:id])
+      @user = User.find(params[:id])
       redirect_to profiles_path, notice: "Not authorized to edit this company profile" if @profile.nil?
     end
 
