@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user.build_profile(profile_params)
     if @profile.save
-      redirect_to @profile, notice: 'Profile was successfully created.'
+      redirect_to user_steps_path
     else
       render action: 'new'
     end

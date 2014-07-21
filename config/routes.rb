@@ -1,5 +1,6 @@
 Cproject::Application.routes.draw do
   resources :profiles
+  resources :user_steps
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   root "pages#home"
