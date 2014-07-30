@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20140625055530) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+<<<<<<< HEAD
+=======
+    t.string   "looking_for"
+    t.string   "stockist"
+>>>>>>> registration
     t.string   "name"
     t.string   "website"
     t.string   "location"
@@ -28,8 +33,13 @@ ActiveRecord::Schema.define(version: 20140625055530) do
     t.string   "brands_we_carry"
     t.string   "description"
     t.boolean  "is_brand",            default: true
+<<<<<<< HEAD
     t.string   "looking_for"
     t.string   "stockist"
+=======
+    t.string   "what_we_sell"
+    t.string   "type"
+>>>>>>> registration
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
