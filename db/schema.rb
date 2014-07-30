@@ -17,17 +17,21 @@ ActiveRecord::Schema.define(version: 20140625055530) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "looking_for"
+    t.string   "stockist"
     t.string   "name"
     t.string   "website"
     t.string   "location"
     t.string   "what_we_make"
     t.string   "brands_we_carry"
     t.string   "description"
-    t.boolean  "is_brand",            default: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.boolean  "is_brand",            default: true
+    t.string   "what_we_sell"
+    t.string   "type"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
