@@ -22,3 +22,121 @@
 	bottom: 10px;
 	color: #bdc3c7;
 }
+
+#edit-btn {
+	margin-left: 100px;
+}
+
+#banner {
+	background-color: white;
+	height: 215px;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 40px;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+	box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+}
+
+#profile-buttons {
+	margin-left: 100px;
+	margin-bottom: 10px;
+}
+
+#subtitle {
+	color: #bdc3c7;
+}
+
+#banner img {
+	width: 140px;
+	height: 140px;
+	float: left;
+	margin-left: 46px;
+	margin-top: 36px;
+	margin-right: 27px;
+}
+
+#banner h2 {
+	padding-top: 30px;
+	padding-bottom: 0px;
+}
+
+#banner p {
+	padding-bottom: 0px;
+}
+
+#title h2 {
+	font-size: small;
+	margin-left: 100px;
+	color: #95a5a6;
+}
+
+#section {
+	background-color: white;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-top: 36px;
+	padding-bottom: 36px;
+	padding-left: 180px;
+	padding-right: 180px;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+	box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+}
+
+#section p {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#photo img {
+	width: 400px;
+	height: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}
+
+#gallery img {
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+	margin-bottom: 40px;
+}
+
+#gallery {
+	margin-left: 80px;
+	margin-right: auto;
+}
+
+#subsection {
+	background-color: lighten(#000, 97.5%);
+	padding-top: 5px;
+	padding-bottom: 12px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 500px;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#subsection h2 {
+	font-size: small;
+	padding-bottom: 5px;
+}
+
+#tag p {
+	display: inline;
+	background-color: #D7ECFF;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	border: 1px solid #8CC7FB;
+}

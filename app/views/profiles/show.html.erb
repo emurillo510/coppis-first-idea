@@ -1,35 +1,89 @@
 <p id="notice"><%= notice %></p>
 
-<% if @profile.user == current_user %>
-	<%= link_to 'Edit Company Profile', edit_profile_path(@profile) %>
-<% end %>
+<div id="edit-btn">
+  <% if @profile.user == current_user %>
+  	<button type="button" class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile) %></button>
+  <% end %>
+</div>
 <br>
-<%= image_tag @profile.avatar.url(:medium) %>
-<p>
-  <strong>Company Name:</strong>
-  <%= @profile.name %>
-</p>
-<p>
-  <strong>Location:</strong>
-  <%= @profile.location %>
-</p>
-<p>
-  <strong>Website:</strong>
-  <%= @profile.website %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @profile.description %>
-</p>
-<p>
-  <strong>What We Make:</strong>
-  <%= @profile.what_we_make %>
-</p>
-<p>
-  <strong>Looking For:</strong>
-  <%= @profile.looking_for %>
-</p>
-<p>
-  <strong>Stockists:</strong>
-  <%= @profile.stockist %>
-</p>
+<div id="banner">
+  <%= image_tag @profile.avatar.url(:medium) %>
+  <table>
+    <tr>
+      <td><h2><%= @profile.name %></h2></td>
+    </tr>
+    <tr>
+      <td><%= @profile.location %></td>
+    </tr>
+    <tr>
+      <td><%= @profile.website %></td>
+    </tr>
+    <tr>
+      <td>
+        <div id="subtitle">
+          <%= @profile.what_we_make %>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="profile-buttons" class="btn-group">
+  <button type="button" class="btn btn-default active">Overview</button>
+  <button type="button" class="btn btn-default">News</button>
+  <button type="button" class="btn btn-default">Followers (950)</button>
+</div>
+
+<div id="title">
+  <h2>ABOUT US<h2>
+</div>
+<div id="section">
+  <div id="photo">
+    <%= image_tag @profile.avatar.url(:medium) %>
+  </div>
+  <div id="gallery">
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+  </div>
+  <p>
+    <%= @profile.description %>
+  </p>
+  <br>
+
+  <div id="subsection">
+    <h2>
+      WHAT WE MAKE
+    </h2>
+    <div id="tag">
+      <p>
+        <%= @profile.what_we_make %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div id="title">
+  <h2>LOOKING FOR<h2>
+</div>
+<div id="section">
+  <p>
+    <%= @profile.looking_for %>
+  </p>
+
+  <br>
+
+  <div id="subsection">
+    <h2>STOCKISTS</h2>
+    <div id="tag">
+      <p>
+        <%= @profile.stockist %>
+      </p>
+    </div>
+  </div>
+</div>
+<br>
