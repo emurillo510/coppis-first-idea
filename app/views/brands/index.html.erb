@@ -1,25 +1,28 @@
-<h1>Brands</h1>
- <ul class="nav nav-pills">
-   <li><a href="#">Featured</a></li>
- 	<li><a href="#">Trending</a></li>
-   <li class="active"><a href="#">All</a></li></div>
- </ul>
- <br>
+
+<div id="browse">
+  <h1><em>BRANDS</em></h1>
+  <ul class="nav nav-pills">
+    <li><a href="#">Featured</a></li>
+    <li><a href="#">Trending</a></li>
+    <li class="active"><a href="#">All</a></li></div>
+  </ul>
+</div>
+<br>
 <div id="cards" class="transitions-enabled">
-   <% @profiles.each do |profile| %>
-     <div class="box panel panel-default">
-       <%= link_to image_tag(profile.avatar.url(:medium)), profile %>
-       <div class="panel-body">
-         <strong><%= profile.name %></strong><br>
-         <%= profile.description %><br>
-         <br>
-         <div id="location">
-           <%= profile.location %>
-         </div><br>
-       </div>
-     </div>
-   <% end %>
- </div>
- <div class="center">
-  <%= will_paginate @profiles, renderer: BootstrapPagination::Rails %>
+  <% @profiles.each do |profile| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(profile.avatar.url(:medium)), profile %>
+      <div class="panel-body">
+        <strong><%= profile.name %></strong><br>
+        <%= profile.description %><br>
+        <br>
+        <div id="location">
+          <%= profile.location %>
+        </div><br>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="center">
+  <%= will_paginate @profiles, renderer: BootstrapPagination::Rails %>
 </div>

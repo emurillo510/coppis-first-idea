@@ -2,12 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#cards {
+#bg {
+  background: url(http://swgnt.com/wp-content/uploads/2014/05/22.jpg) no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 350px; 
+  top:0;
+  left:0;
+  z-index: -1;
+  opacity: .9;
+}
+
+#coppis {
+	text-align: center;
+	color: white;
+	align: center;
+	margin-top: 5%;
+}
+
+#coppis h1 {
+	font-size: 400%;
+}
+
+#coppis p {
+	font-size: 150%;
+	color: white;
+}
+
+#form {
+	width: 300px;
 	margin: 0 auto;
+	color: white;
+}
+
+#browse h1 {
+	font-size: medium;
+}
+
+#cards {
+	margin: 0px auto;
 }
 
 .box {
-	margin: 5px;
+	margin-top: 0px;
+	margin-right: 60px;
 	width: 214px;
 	height: 428px;
 }
@@ -139,4 +177,13 @@
 	-moz-border-radius: 2px 2px 2px 2px;
 	-webkit-border-radius: 2px 2px 2px 2px;
 	border: 1px solid #8CC7FB;
+}
+
+#createprofile {
+	margin: 0 auto;
+	width: 200px;
+}
+
+#createprofile h2 {
+	font-size: medium;
 }

@@ -1,35 +1,21 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Sign in</h1>
-    </div>
-  </div>
-  <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<div id="coppis" class="panel-heading">
+  <h1>Coppis</h1>
+  <p>Connecting brands and retailers.</p>
+</div>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <div class="checkbox">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit "Sign in", class: "btn btn-primary" %>
-      </div>
+<div id="form" class="panel-body">
+  <%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.email_field :email, autofocus: true, hide_label: :true, placeholder: "Email" %>
+    <%= f.password_field :password, hide_label: :true, placeholder: "Password" %>
+    <%= f.form_group do %>
+      <p><%= f.check_box :remember_me %></p>
     <% end %>
-  </div>
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
+    <%= f.form_group do %>
+      <%= f.submit "Sign in", class: "btn btn-default" %>
+    <% end %>
+    <div class="panel-footer">
+      <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
 </div>
