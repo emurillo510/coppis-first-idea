@@ -6,7 +6,6 @@ Cproject::Application.routes.draw do
   end
 	
   resources :user_steps
-  resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
