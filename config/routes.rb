@@ -1,6 +1,14 @@
 Cproject::Application.routes.draw do
-  resources :profiles
+  resources :profiles do
+      member do
+         get :following, :followers
+      end
+  end
+	
   resources :user_steps
+  resources :sessions,      only: [:new, :create, :destroy]
+  resources :microposts,    only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   root "pages#home"

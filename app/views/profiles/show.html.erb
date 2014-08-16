@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<section>
+  <%= render 'shared/stats' %>
+</section>
+
+<%= render 'follow_form' if user_signed_in? %>
+
 <div id="edit-btn">
   <% if @profile.user == current_user %>
   	<button type="button" class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile) %></button>

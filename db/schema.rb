@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625055530) do
+ActiveRecord::Schema.define(version: 20140812005810) do
 
   create_table "profiles", force: true do |t|
     t.datetime "created_at"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140625055530) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "looking_for"
+    t.string   "stockist"
     t.string   "name"
     t.string   "website"
     t.string   "location"
@@ -28,13 +30,22 @@ ActiveRecord::Schema.define(version: 20140625055530) do
     t.string   "brands_we_carry"
     t.string   "description"
     t.boolean  "is_brand",            default: true
-    t.string   "looking_for"
-    t.string   "stockist"
     t.string   "what_we_sell"
     t.string   "type"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "relationships", force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

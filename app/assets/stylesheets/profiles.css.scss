@@ -187,3 +187,11 @@
 #createprofile h2 {
 	font-size: medium;
 }
+
+.profile_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}

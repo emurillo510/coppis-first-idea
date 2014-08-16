@@ -46,6 +46,20 @@ class ProfilesController < ApplicationController
     redirect_to profiles_url
   end
 
+  def following
+    @title = "Following"
+    @profile = Profile.find(params[:id])
+    @profiles = @profile.followed_profiles.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @profile = Profile.find(params[:id])
+    @profiles = @profile.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
@@ -55,6 +69,10 @@ class ProfilesController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to profiles_path, notice: "Not authorized to edit this company profile" if @profile.nil?
+    end
+
+    def admin_user
+      redirect_to(root_url) unless @profile.admin?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
