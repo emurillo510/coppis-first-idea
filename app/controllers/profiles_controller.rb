@@ -10,6 +10,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1
   def show
+    @profile = Profile.find(params[:id])
+    @microposts = @profile.microposts.paginate(page: params[:page])
   end
 
   # GET /profiles/new
@@ -58,6 +60,11 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @profiles = @profile.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def feed
+    # This is preliminary. See "Following users" for the full implementation.
+    Micropost.where("profile_id = ?", id)
   end
 
   private

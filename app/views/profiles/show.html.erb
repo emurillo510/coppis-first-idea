@@ -34,62 +34,19 @@
   </table>
 </div>
 
+
 <div id="profile-buttons" class="btn-group">
   <button type="button" class="btn btn-default active">Overview</button>
   <button type="button" class="btn btn-default">News</button>
   <button type="button" class="btn btn-default" >Followers (<%= @profile.followers.count %>)</button>
 </div>
 
-<div id="title">
-  <h2>ABOUT US<h2>
-</div>
-<div id="section">
-  <div id="photo">
-    <%= image_tag @profile.avatar.url(:medium) %>
-  </div>
-  <div id="gallery">
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-  </div>
-  <p>
-    <%= @profile.description %>
-  </p>
-  <br>
+<%= render(:partial => 'overview') %>
 
-  <div id="subsection">
-    <h2>
-      WHAT WE MAKE
-    </h2>
-    <div id="tag">
-      <p>
-        <%= @profile.what_we_make %>
-      </p>
-    </div>
-  </div>
-</div>
-
-<br>
-
-<div id="title">
-  <h2>LOOKING FOR<h2>
-</div>
-<div id="section">
-  <p>
-    <%= @profile.looking_for %>
-  </p>
-
-  <br>
-
-  <div id="subsection">
-    <h2>STOCKISTS</h2>
-    <div id="tag">
-      <p>
-        <%= @profile.stockist %>
-      </p>
-    </div>
-  </div>
-</div>
-<br>
+<% if @profile.microposts.any? %>
+  <h3>Microposts (<%= @profile.microposts.count %>)</h3>
+  <ol class="microposts">
+    <%= render @microposts %>
+  </ol>
+  <%= will_paginate @microposts %>
+<% end %>

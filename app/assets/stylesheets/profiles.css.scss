@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h2 {
+	font-size: medium;
+}
+
 #bg {
   background: url(http://swgnt.com/wp-content/uploads/2014/05/22.jpg) no-repeat center center;
   position: fixed;
@@ -188,10 +192,5 @@
 	font-size: medium;
 }
 
-.profile_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
+.center-form {
 }

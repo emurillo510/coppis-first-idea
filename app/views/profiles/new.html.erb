@@ -1,7 +1,5 @@
 <div id="createprofile">
-  <h2>I am creating a profile for:</h2>
-
-  <%= form_for(@profile) do |f| %>
+  <%= bootstrap_form_for(@profile) do |f| %>
     <% if @profile.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -14,12 +12,10 @@
       </div>
     <% end %>
 
-    <div>
-      <%= f.radio_button :is_brand, true %> <%= f.label :is_brand, "Brand" %>
-    </div>
-    <div> 
-      <%= f.radio_button :is_brand, false %> <%= f.label :is_brand, "Retailer" %>
-    </div>
+    <%= f.form_group :is_brand, label: { text: "I am creating a profile for:" } do %>
+      <%= f.radio_button :is_brand, true, label: "a Brand", inline: true %>
+      <%= f.radio_button :is_brand, false, label: "a Retailer", inline: true %>
+    <% end %>
 
     <div class="actions">
       <%= f.submit "Continue" %>

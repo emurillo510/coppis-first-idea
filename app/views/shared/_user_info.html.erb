@@ -1,0 +1,10 @@
+<%= image_tag @profile.avatar.url(:medium), @profile %>
+<h1>
+  <%= profile.name %>
+</h1>
+<span>
+  <%= link_to "view my profile", current_user %>
+</span>
+<span>
+  <%= pluralize(current_user.microposts.count, "micropost") %>
+</span>

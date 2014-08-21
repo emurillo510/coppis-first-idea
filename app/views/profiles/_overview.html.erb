@@ -1,0 +1,53 @@
+<div id="title">
+  <h2>ABOUT US<h2>
+</div>
+<div id="section">
+  <div id="photo">
+    <%= image_tag @profile.avatar.url(:medium) %>
+  </div>
+  <div id="gallery">
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+    <%= image_tag @profile.avatar.url(:medium) %>
+  </div>
+  <p>
+    <%= @profile.description %>
+  </p>
+  <br>
+
+  <div id="subsection">
+    <h2>
+      WHAT WE MAKE
+    </h2>
+    <div id="tag">
+      <p>
+        <%= @profile.what_we_make %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div id="title">
+  <h2>LOOKING FOR<h2>
+</div>
+<div id="section">
+  <p>
+    <%= @profile.looking_for %>
+  </p>
+
+  <br>
+
+  <div id="subsection">
+    <h2>STOCKISTS</h2>
+    <div id="tag">
+      <p>
+        <%= @profile.stockist %>
+      </p>
+    </div>
+  </div>
+</div>
+<br>

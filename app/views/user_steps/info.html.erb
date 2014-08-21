@@ -1,6 +1,6 @@
 <h2>Enter Company Info</h2>
 
-<%= form_for(@profile) do |f| %>
+<%= bootstrap_form_for(@profile, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-4") do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -13,55 +13,19 @@
     </div>
   <% end %>
 
-  <br>
-  <div class="field">
-    <%= f.label :name, "Brand Name" %><br>
-    <%= f.text_field :name %>
-  </div>
-  <br>
+  <%= f.text_field :name, label: "Brand Name" %>
 
   <div class="form-group">
-    <%= f.label :avatar, "Logo"  %><br>
-    <%= image_tag @profile.avatar.url(:thumb) %>
-    <div>
-    <%= f.file_field :avatar %>
-    </div>
+    <%= f.file_field :avatar, label: "Logo"%>
   </div>
-  <br>
 
-  <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
-  </div>
-  <br>
-
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :what_we_make, "What We Make" %><br>
-    <%= f.text_field :what_we_make %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :looking_for, "What We're Looking For" %><br>
-    <%= f.text_field :looking_for %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :stockist, "Stockists" %><br>
-    <%= f.text_field :stockist %>
-  </div>
-  <br>
-
-  <div class="actions">
-    <%= f.submit "Create Profile"%>
-  </div>
+  <%= f.text_field :website, label: "Website" %>
+  <%= f.text_field :location, label: "Location"%>
+  <%= f.text_area :description, label: "About Us", help: "Write a description of your brand or company." %>
+  <%= f.text_field :what_we_make, label: "What We Make", help: "What kind of things do you make?" %>
+  <%= f.text_area :looking_for, label: "Looking For", help: "Describe the stores, retailers, or people that you are looking to work with." %>
+  <%= f.text_field :stockist, label: "Stockists", help: "What stores carry your brand?" %>
+  <%= f.form_group do %>
+    <%= f.submit "Create Profile" %>
+  <% end %>
 <% end %>
