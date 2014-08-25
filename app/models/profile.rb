@@ -24,4 +24,8 @@ class Profile < ActiveRecord::Base
     relationships.find_by(followed_id: other_profile.id).destroy
   end
 
+  def feed
+    Micropost.from_profiles_followed_by(self)
+  end
+
 end

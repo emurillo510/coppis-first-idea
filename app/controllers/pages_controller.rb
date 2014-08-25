@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   	if user_signed_in?
       @micropost = Micropost.new
-      #@feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_items = current_user.profile.feed.paginate(page: params[:page])
       @profile = current_user.profile
     end
   end
