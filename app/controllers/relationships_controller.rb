@@ -2,7 +2,8 @@ class RelationshipsController < ApplicationController
 
   def create
     @profile = Profile.find(params[:relationship][:followed_id])
-    @profile.follow!(@profile)
+    @current = current_user.profile
+    @current.follow!(@profile)
     respond_to do |format|
       format.html { redirect_to @profile }
       format.js
@@ -10,8 +11,9 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
+    @current = current_user.profile
     @profile = Relationship.find(params[:id]).followed
-    @profile.unfollow!(@profile)
+    @current.unfollow!(@profile)
     respond_to do |format|
       format.html { redirect_to @profile }
       format.js
