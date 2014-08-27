@@ -1,4 +1,6 @@
 Cproject::Application.routes.draw do
+  resources :photos
+
   resources :profiles do
       member do
          get :following, :followers

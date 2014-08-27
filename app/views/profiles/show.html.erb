@@ -9,6 +9,8 @@
 <div id="edit-btn">
   <% if @profile.user == current_user %>
   	<button type="button" class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile) %></button>
+
+    <button type="button" class="btn btn-default"><%= link_to 'Add Photo', new_photo_path(@profile) %></button>
   <% end %>
 </div>
 <br>

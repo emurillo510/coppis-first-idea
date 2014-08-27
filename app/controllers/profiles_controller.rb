@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     @microposts = @profile.microposts.paginate(page: params[:page])
+    @photos = @profile.photos
   end
 
   # GET /profiles/new
