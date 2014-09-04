@@ -7,3 +7,8 @@ $ ->
     $('#cards').masonry
       itemSelector: '.box'
       isFitWidth: true
+
+
+$(document).ready ->
+  $(".single-item").slick()
+  return

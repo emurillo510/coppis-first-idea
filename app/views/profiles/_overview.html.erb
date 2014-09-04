@@ -2,16 +2,17 @@
   <h2>ABOUT US<h2>
 </div>
 <div id="section">
-  <div id="photo">
-    <%= image_tag @profile.avatar.url(:medium)   %>
+  
+
+
+  <div class="single-item">
+    <div><%= image_tag @profile.avatar.url(:medium) %></div>
+    <div><%= image_tag @profile.avatar.url(:medium) %></div>
+    <div><%= image_tag @profile.avatar.url(:medium) %></div>
+    <div><%= image_tag @profile.avatar.url(:medium) %></div>
+    <div><%= image_tag @profile.avatar.url(:medium) %></div>
   </div>
-  <div id="gallery">
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-    <%= image_tag @profile.avatar.url(:medium) %>
-  </div>
+
   <p>
     <%= @profile.description %>
   </p>
@@ -50,4 +51,3 @@
     </div>
   </div>
 </div>
-<br>
