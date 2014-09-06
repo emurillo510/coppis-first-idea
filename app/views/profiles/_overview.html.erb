@@ -3,15 +3,43 @@
 </div>
 <div id="section">
   
-
-
-  <div class="single-item">
-    <div><%= image_tag @profile.avatar.url(:medium) %></div>
-    <div><%= image_tag @profile.avatar.url(:medium) %></div>
-    <div><%= image_tag @profile.avatar.url(:medium) %></div>
-    <div><%= image_tag @profile.avatar.url(:medium) %></div>
-    <div><%= image_tag @profile.avatar.url(:medium) %></div>
-  </div>
+  <div id="rg-gallery" class="rg-gallery">
+    <div class="rg-thumbs">
+        <!-- Elastislide Carousel Thumbnail Viewer -->
+        <div class="es-carousel-wrapper">
+            <div class="es-nav">
+                <span class="es-nav-prev">Previous</span>
+                <span class="es-nav-next">Next</span>
+            </div>
+            <div class="es-carousel">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSFA13-GT12-BLKZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSFA13-GT12-BLKZOOM1.JPG" alt="image01" data-description="The Logotype 2013 Tee in Black" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSW12-GT13-MARZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSW12-GT13-MARZOOM1.JPG" alt="image01" data-description="The Feather B Logo Tee in Maroon" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSWI13-GT11-BLKZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSWI13-GT11-BLKZOOM1.JPG" alt="image01" data-description="The Poche B Logo in Black" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSSU14-GT07-BLKZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSSU14-GT07-BLKZOOM1.JPG" alt="image01" data-description="The Rebel Red Flag Tee in Black" />
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- End Elastislide Carousel Thumbnail Viewer -->
+    </div><!-- rg-thumbs -->
+  </div><!-- rg-gallery -->
 
   <p>
     <%= @profile.description %>

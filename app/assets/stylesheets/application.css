@@ -12,7 +12,10 @@
  *= require 'masonry/transitions'
  *= require_tree .
  *= require rails_bootstrap_forms
+ *= require gallery/responsive/elastislide
+ *= require gallery/responsive
+ *= require gallery/slideshow
+ *= require gallery/galleria/classic
+ *= require gallery/touch_touch
  *= require slick
  */
-
-@import 'slick';
