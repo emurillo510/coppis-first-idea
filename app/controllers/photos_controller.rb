@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
     @profile = Profile.find(current_user)
     @photo = @profile.photos.build(photo_params)
     if @photo.save
-      redirect_to @photo, notice: 'Photo was successfully posted.'
+      redirect_to @profile, notice: 'Photo was successfully posted.'
     else
       render action: 'new'
     end
