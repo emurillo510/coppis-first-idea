@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-	<%= debug @photo.image %> 
   <%= image_tag @photo.image.url(:medium) %>
   <%= @photo.description %>
   <%= @photo.profile.name %>

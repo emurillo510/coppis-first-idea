@@ -13,28 +13,14 @@
             </div>
             <div class="es-carousel">
                 <ul>
+                  <% @photos.each do |photo| %>
                     <li>
                         <a href="#">
-                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSFA13-GT12-BLKZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSFA13-GT12-BLKZOOM1.JPG" alt="image01" data-description="The Logotype 2013 Tee in Black" />
+                            <%= image_tag photo.image.url, :data => { :large => photo.image.url,:description => photo.description } %>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSW12-GT13-MARZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSW12-GT13-MARZOOM1.JPG" alt="image01" data-description="The Feather B Logo Tee in Maroon" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSWI13-GT11-BLKZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSWI13-GT11-BLKZOOM1.JPG" alt="image01" data-description="The Poche B Logo in Black" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSSU14-GT07-BLKZOOM1.JPG" data-large="http://cdn.karmaloopassets.com/vendor/BLS/zoom/BSSU14-GT07-BLKZOOM1.JPG" alt="image01" data-description="The Rebel Red Flag Tee in Black" />
-                        </a>
-                    </li>
-                    
-                </ul>
+                  <% end %>
+               </ul>
             </div>
         </div>
         <!-- End Elastislide Carousel Thumbnail Viewer -->
