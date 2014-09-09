@@ -38,7 +38,7 @@
     </h2>
     <div id="tag">
       <p>
-        <%= @profile.what_we_make %>
+        <%= raw @profile.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %> 
       </p>
     </div>
   </div>

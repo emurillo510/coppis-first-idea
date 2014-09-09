@@ -11,6 +11,8 @@ class Profile < ActiveRecord::Base
                                    class_name:  "Relationship",
                                    dependent:   :destroy
         has_many :followers, through: :reverse_relationships, source: :follower
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :tag_list
 
 
   def following?(other_profile)

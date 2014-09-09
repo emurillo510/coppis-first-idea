@@ -170,7 +170,8 @@ h2 {
 	padding-bottom: 5px;
 }
 
-#tag p {
+#tag a, #tag a:hover {
+	text-decoration: none;
 	display: inline;
 	background-color: #D7ECFF;
 	padding-left: 5px;

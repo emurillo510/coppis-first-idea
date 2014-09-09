@@ -18,6 +18,7 @@ Cproject::Application.routes.draw do
   get "news" => "pages#news"
   get "brands" => "brands#index"
   get "retailers" => "retailers#index"
+  get 'tags/:tag', to: 'profiles#index', as: :tag
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
