@@ -10,10 +10,10 @@
   <% if @profile.user == current_user %>
   
    <!-- uncommented -->
-  <!-- <button type="button"  class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile), method: "get" %></button> -->
+	<!-- <button type="button"  class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile), method: "get" %></button> -->
    <!-- <button type="button" class="btn btn-default"><%= link_to 'Add Photo', new_photo_path(@profile) , method: "get" %></button> -->
-   <%= button_to 'Edit Company Profile', edit_profile_path(@profile), method: "get", class: "btn btn-default" %>
-   <%= button_to 'Add Photo', new_photo_path, method: "get",class: "btn btn-default" %>
+	 <%= button_to 'Edit Company Profile', edit_profile_path(@profile), method: "get", class: "btn btn-default" %>
+	 <%= button_to 'Add Photo', new_photo_path, method: "get",class: "btn btn-default" %>
   <% end %>
 </div>
 <br>
@@ -35,14 +35,16 @@
 
 <div id="profile-buttons" class="btn-group">
   <!-- <button type="button" class="btn btn-default active">Overview</button> -->
-  <%= button_to 'Overview' , profile_get_overview_path(@profile), :id => 'btn-overview',     :class => 'btn btn-default' , method: 'get' %> 
-  <%= button_to 'News' , profile_get_news_path(@profile), :id => 'btn-overview',     :class => 'btn btn-default' , method: 'get' %> 
-  <%= button_to 'Followers' , profile_get_followers_path, :id => 'btn-overview',     :class => 'btn btn-default' , method: 'get' %> 
+
+<%= button_to 'Overview' , profile_get_overview_path(@profile), :id => 'bt    n-overview',     :class => 'btn btn-default' , method: 'get' %>
+<%= button_to 'News' , profile_get_news_path(@profile), :id => 'btn-overvi    ew',     :class => 'btn btn-default' , method: 'get' %>
+<%= button_to 'Followers' , profile_get_followers_path(@profile), :id => '    btn-overview',     :class => 'btn btn-default' , method: 'get' %>
+
 
   <!-- <button type="button" class="btn btn-default">News</button> -->
   <!--<button type="button" class="btn btn-default" >Followers (<%= @profile.followers.count %>)</button>-->
 </div>
 
 <div id="render-partial">
-<%= render(:partial => 'overview') %>
+<%= render(:partial => 'get_followers') %>
 </div>

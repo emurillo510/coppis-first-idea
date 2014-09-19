@@ -71,6 +71,41 @@ class ProfilesController < ApplicationController
     # This is preliminary. See "Following users" for the full implementation.
     Micropost.where("profile_id = ?", id)
   end
+  
+    def get_overview
+    #@profile = current_user.profile
+    #@microposts = @profile.microposts.paginate(page: params[:page])
+    #@photos = @profile.photos
+    @profile = Profile.find( params[:id] )
+   @microposts = @profile.microposts.paginate( page: params[:page])
+   @photos = @profile.photos
+   
+
+
+
+      respond_to do |format|
+  
+         format.html { redirect_to profile_path(@profile)}
+      end
+    end
+    
+    def get_news
+      
+      @profile = Profile.find( params[:id] ) 
+      @microposts = @profile.microposts.paginate( page: params[:page] )
+      @photos = @profile.photos
+    
+    end
+    
+    def get_followers
+       @profile = Profile.find( params[:id] )
+       @microposts = @profile.microposts.paginate( page: params[:page] )
+       @photos = @profile.photos
+       
+       @title = "Followers"
+       @profiles = @profile.followers.paginate( page: params[:page] )
+      
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -91,4 +126,7 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:avatar, :description, :name, :is_brand, :website, :location, :what_we_make, :brands_we_carry, :looking_for, :stockist, :tag_list)
     end
+    
+    
+  
 end
