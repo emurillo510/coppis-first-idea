@@ -33,17 +33,10 @@
 </div>
 
 
-<div id="profile-buttons" class="btn-group">
-  <!-- <button type="button" class="btn btn-default active">Overview</button> -->
-
-<%= button_to 'Overview' , profile_get_overview_path(@profile), :id => 'bt    n-overview',     :class => 'btn btn-default' , method: 'get' %>
-<%= button_to 'News' , profile_get_news_path(@profile), :id => 'btn-overvi    ew',     :class => 'btn btn-default' , method: 'get' %>
-<%= button_to 'Followers' , profile_get_followers_path(@profile), :id => '    btn-overview',     :class => 'btn btn-default' , method: 'get' %>
-
-
-
-  <!-- <button type="button" class="btn btn-default">News</button> -->
-  <!--<button type="button" class="btn btn-default" >Followers (<%= @profile.followers.count %>)</button>-->
+<div class="btn-group" id="profile-buttons">
+  <%= link_to 'Overview', profile_get_overview_path(@profile), :class => 'btn btn-default'  %>
+  <%= link_to 'News', profile_get_news_path(@profile), :class => 'btn btn-primary'  %>
+  <%= link_to 'Followers', profile_get_followers_path, :class => 'btn btn-default'  %>
 </div>
 
 <div id="render-partial">
