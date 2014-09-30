@@ -1,13 +1,13 @@
 
 <div id="browse">
   <h1><em>BRANDS</em></h1>
-  <ul class="nav nav-pills">
-    <li><a href="#">Featured</a></li>
-    <li><a href="#">Trending</a></li>
-    <li class="active"><a href="#">All</a></li></div>
-  </ul>
+  <div class="btn-group" id="profile-buttons">
+    <%= link_to 'Featured', '#', :class => 'btn btn-link'  %>
+    <%= link_to 'Trending', '#', :class => 'btn btn-link'  %>
+    <%= link_to 'All', '#', :class => 'btn btn-link active'  %>
+  </div>
 </div>
-
+<br>
 <div id="cards" class="transitions-enabled">
   <% @profiles.each do |profile| %>
     <div class="box panel panel-default">
