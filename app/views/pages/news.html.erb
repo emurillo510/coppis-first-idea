@@ -1,1 +1,10 @@
-NEWS
+<% if user_signed_in? %>
+
+<div class="col-md-8">
+		  <h3>News Feed</h3>
+		  <div class="feed">
+		  	<%= render 'shared/feed' %>
+		  </div>
+		</div>
+
+<% end %>

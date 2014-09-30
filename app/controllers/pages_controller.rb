@@ -13,10 +13,16 @@ class PagesController < ApplicationController
   def profile
   end
 
-  def create
 
-    
+  def create
   end
+
+  def news
+    if user_signed_in?
+      @feed_items = current_user.profile.feed.paginate(page: params[:page])
+    end
+  end
+
 
   private
 
