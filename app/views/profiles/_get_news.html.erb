@@ -1,9 +1,11 @@
-<div id="news">
+<div id="title">
+	<h2>NEWS (<%= @profile.microposts.count %>)</h2>
+</div>
+<br>
+
 <% if @profile.microposts.any? %>
-   <h3>Microposts (<%= @profile.microposts.count %>)</h3>
-   <ol class="microposts">
+   <div id="section"><ol class="microposts">
      <%= render @microposts %>
    </ol>
    <%= will_paginate @microposts %>
- <% end %>
-</div>
+ <% end %></div>
