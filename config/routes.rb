@@ -26,6 +26,7 @@ Cproject::Application.routes.draw do
   get 'profiles/:id/overview' => 'profiles#get_overview', as: 'profile_get_overview'
   get 'profiles/:id/get-news' =>  'profiles#get_news', as: 'profile_get_news' 
   get 'profiles/:id/get-followers' =>  'profiles#get_followers' , as: 'profile_get_followers' 
+  get 'profiles/:id/get-following' =>  'profiles#get_following' , as: 'profile_get_following' 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

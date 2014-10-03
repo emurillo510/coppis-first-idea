@@ -1,0 +1,13 @@
+<div id="title">
+  <h2>FOLLOWING (<%= @profile.followed_profiles.count %>)<h2>
+</div>
+<div class="jumbotron">
+    <div class="span8">
+      <% if @profiles.any? %>
+        <ul class="profiles">
+          <%= render @profiles %>
+        </ul>
+        <%= will_paginate %>
+      <% end %>
+    </div>
+</div>

@@ -6,10 +6,10 @@
   <% if @profile.user == current_user %>
   
    <!-- uncommented -->
-  <!-- <button type="button"  class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile), method: "get" %></button> -->
+	<!-- <button type="button"  class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile), method: "get" %></button> -->
    <!-- <button type="button" class="btn btn-default"><%= link_to 'Add Photo', new_photo_path(@profile) , method: "get" %></button> -->
-   <%= button_to 'Edit Company Profile', edit_profile_path(@profile), method: "get", class: "btn btn-default" %>
-   <%= button_to 'Add Photo', new_photo_path, method: "get",class: "btn btn-default" %>
+	 <%= button_to 'Edit Company Profile', edit_profile_path(@profile), method: "get", class: "btn btn-default" %>
+	 <%= button_to 'Add Photo', new_photo_path, method: "get",class: "btn btn-default" %>
   <% end %>
 </div>
 <br>
@@ -29,14 +29,17 @@
   </table>
 </div>
 <br>
+
+
 <div class="btn-group" id="profile-buttons">
-  <%= link_to 'Overview', profile_get_overview_path(@profile), :class => 'btn btn-primary'  %>
+  <%= link_to 'Overview', profile_get_overview_path(@profile), :class => 'btn btn-default'  %>
   <%= link_to 'News', profile_get_news_path(@profile), :class => 'btn btn-default'  %>
   <%= link_to 'Followers', profile_get_followers_path, :class => 'btn btn-default'  %>
-  <%= link_to 'Following', profile_get_following_path, :class => 'btn btn-default'  %>
+  <%= link_to 'Following', profile_get_following_path, :class => 'btn btn-primary'  %>
 </div>
 
 <div id="render-partial">
-<%= render(:partial => 'overview') %>
+<%= render(:partial => 'get_following') %>
 </div>
 </div>
+<br>

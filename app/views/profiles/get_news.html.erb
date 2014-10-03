@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<section>
-  <%= render 'shared/stats' %>
-</section>
-
 <%= render 'follow_form' if user_signed_in? %>
 
 <div id="edit-btn">
@@ -38,6 +34,7 @@
   <%= link_to 'Overview', profile_get_overview_path(@profile), :class => 'btn btn-default'  %>
   <%= link_to 'News', profile_get_news_path(@profile), :class => 'btn btn-primary'  %>
   <%= link_to 'Followers', profile_get_followers_path, :class => 'btn btn-default'  %>
+  <%= link_to 'Following', profile_get_following_path, :class => 'btn btn-default'  %>
 </div>
 
 <div id="render-partial">

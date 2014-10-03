@@ -107,6 +107,16 @@ class ProfilesController < ApplicationController
       
     end
 
+    def get_following
+       @profile = Profile.find( params[:id] )
+       @microposts = @profile.microposts.paginate( page: params[:page] )
+       @photos = @profile.photos
+       
+       @title = "Following"
+       @profiles = @profile.followed_profiles.paginate( page: params[:page] )
+      
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
