@@ -15,7 +15,7 @@
       <%= image_tag profile.avatar.url(:medium) %>
       <div class="panel-body">
         <strong><%= profile.name %></strong><br>
-        <%= truncate profile.description, length: 140 %><br>
+        <%= truncate profile.description, length: 100 %><br>
         <br>
         <div id="location">
           <%= profile.location %>
