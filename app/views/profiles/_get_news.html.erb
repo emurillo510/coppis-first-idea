@@ -4,7 +4,7 @@
 <br>
 
 <% if @profile.microposts.any? %>
-   <div id="section"><ol class="microposts">
+   <div class="jumbotron"><ol class="microposts">
      <%= render @microposts %>
    </ol>
    <%= will_paginate @microposts %>

@@ -48,6 +48,9 @@ h2 {
 	width: 100%;
   height: 100%;
   font-size: 95%;
+  margin-bottom: 20px;
+  border-bottom-right-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
 }
 
 #cards span {
@@ -64,11 +67,17 @@ left:0px;
 	margin-right: 60px;
 	width: 214px;
 	height: 388px;
+	border-top-right-radius: 0.3em;
+	border-top-left-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
 }
 
 .box img {
 	width: 100%;
 	height: 214px;
+	border-top-right-radius: 0.3em;
+	border-top-left-radius: 0.3em;
 }
 
 #location {
@@ -78,7 +87,7 @@ left:0px;
 }
 
 #edit-btn {
-	margin-left: 100px;
+	
 }
 
 #banner {
@@ -93,7 +102,7 @@ left:0px;
 }
 
 #profile-buttons {
-	margin-left: 100px;
+	margin-left: auto 0;
 	margin-bottom: 10px;
 }
 
@@ -121,7 +130,6 @@ left:0px;
 
 #title h2 {
 	font-size: small;
-	margin-left: 100px;
 	color: #95a5a6;
 }
 
@@ -171,7 +179,7 @@ left:0px;
 	padding-bottom: 12px;
 	padding-left: 20px;
 	padding-right: 20px;
-	width: 500px;
+	max-width: 500px;
 	height: 150px;
 	margin-left: auto;
 	margin-right: auto;
@@ -208,6 +216,52 @@ left:0px;
 .center-form {
 }
 
-#profile-buttons {
-	display: inline-block;
+.jumbotron {
+	max-width: 860px;
+	min-height: 240px;
+	margin: 0 auto;
+}
+
+.jumbotron p {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: medium;
+}
+
+.profile-avatar img {
+	width: 140px;
+	height: 140px;
+	float: left;
+	margin-right: 20px;
+}
+
+.rg-gallery {
+	max-width: 500px;
+	margin: 0 auto;
+	background: transparent white;
+}
+
+.jumbo {
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+.microposts {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.profiles {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.profiles img {
+	width: 60px;
+	height: 60px;
 }
