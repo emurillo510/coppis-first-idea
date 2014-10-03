@@ -12,8 +12,7 @@ class Profile < ActiveRecord::Base
                                    dependent:   :destroy
         has_many :followers, through: :reverse_relationships, source: :follower
   acts_as_taggable # Alias for acts_as_taggable_on :tags
-  acts_as_taggable_on :tag_list
-
+  acts_as_taggable_on :stockist
 
   def following?(other_profile)
     relationships.find_by(followed_id: other_profile.id)

@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   def index
     if params[:tag]
       @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 8)
-    else
+	 else
       @profiles = Profile.all.order(:name).paginate(:page => params[:page], :per_page => 8)
     end
   end
@@ -124,7 +124,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:avatar, :description, :name, :is_brand, :website, :location, :what_we_make, :brands_we_carry, :looking_for, :stockist, :tag_list)
+      params.require(:profile).permit(:avatar, :description, :name, :is_brand, :website, :location, :what_we_make, :brands_we_carry, :looking_for, :stockist_list, :tag_list)
     end
     
     

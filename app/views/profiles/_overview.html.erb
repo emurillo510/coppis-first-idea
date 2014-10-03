@@ -59,7 +59,10 @@
     <h2>STOCKISTS</h2>
     <div id="tag">
       <p>
-        <%= @profile.stockist %>
+        <!-- <%= @profile.stockist %>-->
+		  <!-- <%= raw @profile.stockist_list %> -->
+		  <%= raw @profile.stockist_list.map { |t| link_to t , profile_path(current_user) } .join(' ') %>
+		  <!-- <%= raw @profile.stockist_list.map { |t| link_to t , 'changethistoreferencedprofile' } .join(' ') %> -->
       </p>
     </div>
   </div>
