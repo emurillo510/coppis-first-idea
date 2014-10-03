@@ -11,10 +11,11 @@
 <div id="cards" class="transitions-enabled">
   <% @profiles.each do |profile| %>
     <div class="box panel panel-default">
-      <%= link_to image_tag(profile.avatar.url(:medium)), profile %>
+      <%= link_to content_tag(:span), profile %>
+      <%= image_tag profile.avatar.url(:medium) %>
       <div class="panel-body">
         <strong><%= profile.name %></strong><br>
-        <%= profile.description %><br>
+        <%= truncate profile.description, length: 140 %><br>
         <br>
         <div id="location">
           <%= profile.location %>
