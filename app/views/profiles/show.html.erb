@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<%= render 'follow_form' if user_signed_in? %>
-
 <div id="edit-btn">
   <% if @profile.user == current_user %>
   
@@ -23,6 +21,7 @@
     <tr>
       <td><%= @profile.location %></td>
     </tr>
+    <div id="follow-btn"><%= render 'follow_form' if user_signed_in? %></div>
     <tr>
       <td><%= @profile.website %></td>
     </tr>
