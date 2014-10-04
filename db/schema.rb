@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909040620) do
+ActiveRecord::Schema.define(version: 20141004220240) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140909040620) do
   add_index "photos", ["profile_id"], name: "index_photos_on_profile_id"
 
   create_table "profiles", force: true do |t|
-    t.string   "description"
+    t.text     "description",         limit: 255
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140909040620) do
     t.string   "location"
     t.string   "what_we_make"
     t.string   "brands_we_carry"
-    t.boolean  "is_brand",            default: true
+    t.boolean  "is_brand",                        default: true
     t.string   "looking_for"
     t.string   "what_we_sell"
     t.string   "type"
