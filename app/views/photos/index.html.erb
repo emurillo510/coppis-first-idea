@@ -1,9 +1,10 @@
-<h1>Listing photos</h1>
-
+<h1>Edit Photo Gallery</h1>
+<%= button_to 'Add Photo', new_photo_path, method: "get",class: "btn btn-default" %>
+<br>
 <table>
   <thead>
     <tr>
-      <th>Description</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,10 +14,10 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= image_tag photo.image %></td>
+        <td><%= image_tag photo.image(:thumb) %></td>
         <td><%= photo.description %></td>
         <td><%= link_to 'Show', photo %></td>
-        <% if photo.profile == current_user %>
+        <% if photo.profile.user == current_user %>
           <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
           <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -24,9 +25,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'Add Photo', new_photo_path %>
-<% end %>

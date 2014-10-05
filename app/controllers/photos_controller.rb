@@ -11,7 +11,6 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     @profile = Profile.find(params[:id])
-  
   end
 
   # GET /photos/new
