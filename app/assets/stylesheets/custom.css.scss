@@ -234,9 +234,43 @@ input {
   float: left;
   margin-right: 0px;
 }
+.header-avatar{
+  float: left;
+  margin-right: 0px;
+  height: 2px;
+  width: 2px;
+}
 aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  align: center;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer ul {
+  float: left;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
 }

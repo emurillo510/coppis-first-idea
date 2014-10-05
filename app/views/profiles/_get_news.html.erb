@@ -2,10 +2,13 @@
 	<h2>NEWS (<%= @profile.microposts.count %>)</h2>
 </div>
 <br>
-
-<% if @profile.microposts.any? %>
-   <div class="jumbotron"><ol class="microposts">
-     <%= render @microposts %>
-   </ol>
-   <%= will_paginate @microposts %>
- <% end %></div>
+<div class="jumbotron">
+	<div class="span8">
+		<% if @profile.microposts.any? %>
+	   <ol class="microposts">
+	     <%= render @microposts %>
+	   </ol>
+	   <%= will_paginate @microposts %>
+	 	<% end %>
+	</div>
+</div>

@@ -1,45 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= render 'follow_form' if user_signed_in? %>
-
-<div id="edit-btn">
-  <% if @profile.user == current_user %>
-  
-   <!-- uncommented -->
-	<!-- <button type="button"  class="btn btn-default"><%= link_to 'Edit Company Profile', edit_profile_path(@profile), method: "get" %></button> -->
-   <!-- <button type="button" class="btn btn-default"><%= link_to 'Add Photo', new_photo_path(@profile) , method: "get" %></button> -->
-	 <%= button_to 'Edit Company Profile', edit_profile_path(@profile), method: "get", class: "btn btn-default" %>
-	 <%= button_to 'Add Photo', new_photo_path, method: "get",class: "btn btn-default" %>
-  <% end %>
-</div>
+<%= render 'banner' %>
 <br>
-<div class="jumbo">
-<div class="jumbotron">
-  <div class="profile-avatar"><%= image_tag @profile.avatar.url(:medium) %></div>
-  <table>
-    <tr>
-      <td><h2><%= @profile.name %></h2></td>
-    </tr>
-    <tr>
-      <td><%= @profile.location %></td>
-    </tr>
-    <tr>
-      <td><%= @profile.website %></td>
-    </tr>
-  </table>
-</div>
-<br>
-
-
 <div class="btn-group" id="profile-buttons">
   <%= link_to 'Overview', profile_get_overview_path(@profile), :class => 'btn btn-default'  %>
   <%= link_to 'News', profile_get_news_path(@profile), :class => 'btn btn-default'  %>
   <%= link_to 'Followers', profile_get_followers_path, :class => 'btn btn-default'  %>
   <%= link_to 'Following', profile_get_following_path, :class => 'btn btn-primary'  %>
 </div>
-
 <div id="render-partial">
-<%= render(:partial => 'get_following') %>
-</div>
+  <%= render(:partial => 'get_following') %>
 </div>
 <br>

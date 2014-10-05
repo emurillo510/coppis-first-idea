@@ -1,32 +1,26 @@
-<h1>Listing photos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= image_tag photo.image %></td>
-        <td><%= photo.description %></td>
-        <td><%= link_to 'Show', photo %></td>
-        <% if photo.profile == current_user %>
-          <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-          <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="jumbo">
+<h3>Edit Photo Gallery</h3>
 <br>
-
-<% if user_signed_in? %>
-  <%= link_to 'Add Photo', new_photo_path %>
-<% end %>
+<%= button_to 'Add Photo', new_photo_path, method: "get",class: "btn btn-default" %>
+<br>
+<div class="jumbotron">
+  <table id="gallery-table">
+    <tbody>
+      <% @photos.each do |photo| %>
+        <tr>
+          <td><%= link_to image_tag(photo.image.url(:thumb)), photo %></td>
+          <% if photo.profile.user == current_user %>
+            <td><%= link_to edit_photo_path(photo) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %></td>
+            <td><%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
