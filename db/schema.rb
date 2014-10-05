@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004220240) do
+ActiveRecord::Schema.define(version: 20141005160514) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20141004220240) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "microposts", ["profile_id", "created_at"], name: "index_microposts_on_profile_id_and_created_at"
 
   create_table "photos", force: true do |t|
     t.string   "description"
@@ -34,24 +36,24 @@ ActiveRecord::Schema.define(version: 20141004220240) do
   add_index "photos", ["profile_id"], name: "index_photos_on_profile_id"
 
   create_table "profiles", force: true do |t|
+    t.text     "description",         limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "website"
+    t.string   "location"
+    t.string   "what_we_make"
+    t.string   "brands_we_carry"
+    t.boolean  "is_brand",                        default: true
+    t.string   "looking_for"
+    t.string   "what_we_sell"
+    t.string   "type"
     t.integer  "user_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "looking_for"
-    t.string   "stockist"
-    t.string   "name"
-    t.string   "website"
-    t.string   "location"
-    t.string   "category"
-    t.string   "brands_we_carry"
-    t.text     "description",         limit: 65535
-    t.boolean  "is_brand",                          default: true
-    t.string   "what_we_sell"
-    t.string   "type"
+    t.string   "tagline"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
@@ -102,10 +104,6 @@ ActiveRecord::Schema.define(version: 20141004220240) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "website"
-    t.string   "location"
-    t.string   "description"
-    t.string   "what_we_make"
-    t.string   "brands_we_carry"
     t.boolean  "is_brand",               default: false
   end
 
