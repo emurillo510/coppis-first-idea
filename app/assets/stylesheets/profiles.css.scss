@@ -273,3 +273,27 @@ left:0px;
 #gallery-table td {
 	padding: 10px;
 }
+
+.rg-image-wrapper{
+	position:relative;
+	padding:20px 30px;
+	background:none !important; 
+	border-radius: 10px;
+	min-height:20px;
+}
+
+.rg-image-nav a{
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:none !important; 
+	width:28px;
+	height:100%;
+	text-indent:-9000px;
+	cursor:pointer;
+	opacity:0.3;
+	outline:none;
+	-moz-border-radius: 10px 0px 0px 10px;
+	-webkit-border-radius: 10px 0px 0px 10px;
+	border-radius: 10px 0px 0px 10px;
+}
