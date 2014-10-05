@@ -21,6 +21,7 @@ gem 'bootstrap_form', '~> 2.1.1'
 gem "jquery-slick-rails", '~> 1.3.7'
 gem 'rails-gallery', '~> 0.3.3'
 gem 'acts-as-taggable-on'
+gem 'aws-sdk', '~> 1.20.0'
 
 group :development, :test do
      gem 'sqlite3'
