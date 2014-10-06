@@ -310,13 +310,33 @@ left:0px;
 }
 
 .panel-body {
-		padding-top: 10px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
+	padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
 }
 
 .panel-body p {
 	margin-left: 50px;
 	margin-bottom: 0;
+}
+
+.title {
+	padding-top: 6px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-style: italic;	
+  font-size: 1.25em;
+  text-transform: uppercase;
+
+}
+
+.selected {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.unselected {
+  opacity: 0.5;
 }

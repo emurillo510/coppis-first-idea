@@ -1,10 +1,10 @@
-
+<div class="container">
 <div id="browse">
-  <h1><em>RETAILERS</em></h1>
   <ul class="nav nav-pills">
-    <li><a href="#">Featured</a></li>
-    <li><a href="#">Trending</a></li>
-    <li class="active"><a href="#">All</a></li></div>
+    <li class="title">Retailers</li>
+    <li class="unselected"><a href="#">Featured</a></li>
+    <li class="unselected"><a href="#">Trending</a></li>
+    <li class="selected"><a href="#">All</a></li></div>
   </ul>
 </div>
 <br>
@@ -13,8 +13,9 @@
     <div class="box panel panel-default">
       <%= link_to content_tag(:span), profile %>
       <%= image_tag profile.cover.url(:medium) %>
+      <div id="avatar-card"><%= image_tag profile.avatar.url(:thumb) %></div>
       <div class="panel-body">
-        <strong><%= profile.name %></strong><br>
+        <p><strong><%= profile.name %></strong></p>
         <%= truncate profile.tagline, length: 100 %><br>
         <br>
         <div id="location">

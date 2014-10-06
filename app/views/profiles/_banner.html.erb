@@ -1,8 +1,8 @@
 <div class="jumbo">
   <div id="edit-btn">
     <% if @profile.user == current_user %>
-     <%= button_to 'Edit Company Profile', edit_profile_path(@profile), method: "get", class: "btn btn-default" %>
-     <%= button_to 'Edit Photo Gallery', photos_path, method: "get",class: "btn btn-default" %>
+     <%= link_to 'Edit Company Profile', edit_profile_path(@profile), method: "get", class: "btn btn-default" %>
+     <%= link_to 'Edit Photo Gallery', photos_path, method: "get",class: "btn btn-default" %>
     <% end %>
   </div>
   <br>
