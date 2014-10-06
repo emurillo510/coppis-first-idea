@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005160514) do
+ActiveRecord::Schema.define(version: 20141005224425) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -54,6 +54,10 @@ ActiveRecord::Schema.define(version: 20141005160514) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "tagline"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

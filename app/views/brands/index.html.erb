@@ -12,9 +12,10 @@
   <% @profiles.each do |profile| %>
     <div class="box panel panel-default">
       <%= link_to content_tag(:span), profile %>
-      <%= image_tag profile.avatar.url(:medium) %>
+      <%= image_tag profile.cover.url(:medium) %>
+      <div id="avatar-card"><%= image_tag profile.avatar.url(:thumb) %></div>
       <div class="panel-body">
-        <strong><%= profile.name %></strong><br>
+        <p><strong><%= profile.name %></strong></p>
         <%= truncate profile.tagline, length: 100 %><br>
         <br>
         <div id="location">
