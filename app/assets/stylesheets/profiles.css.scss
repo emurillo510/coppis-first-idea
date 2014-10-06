@@ -297,3 +297,19 @@ left:0px;
 	-webkit-border-radius: 10px 0px 0px 10px;
 	border-radius: 10px 0px 0px 10px;
 }
+
+#avatar-card img {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+  top: 188px;
+ 	left: 14px;
+ 	border-style: solid;
+ 	border-width: 2px;
+  border-color: white;
+}
+
+.panel-body p {
+	margin-left: 50px;
+	margin-bottom: 0;
+}
