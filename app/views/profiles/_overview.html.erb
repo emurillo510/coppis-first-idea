@@ -1,3 +1,5 @@
+<% if current_user.profile.is_brand == "true" %>
+
 <div id="title">
   <h2>ABOUT US<h2>
 </div>
@@ -70,3 +72,80 @@
   </div>
 </div>
 <br>
+
+<% else %>
+
+<div id="title">
+  <h2>ABOUT US<h2>
+</div>
+<div class="jumbotron">
+
+  
+  <div id="rg-gallery" class="rg-gallery">
+    <div class="rg-thumbs">
+        <!-- Elastislide Carousel Thumbnail Viewer -->
+        <div class="es-carousel-wrapper">
+            <div class="es-nav">
+                <span class="es-nav-prev">Previous</span>
+                <span class="es-nav-next">Next</span>
+            </div>
+            <div class="es-carousel">
+                <ul>
+                  <% @photos.each do |photo| %>
+                    <li>
+                        <a href="#">
+                            <%= image_tag photo.image.url, :data => { :large => photo.image.url,:description => photo.description } %>
+                        </a>
+                    </li>
+                  <% end %>
+               </ul>
+            </div>
+        </div>
+        <!-- End Elastislide Carousel Thumbnail Viewer -->
+    </div><!-- rg-thumbs -->
+  </div><!-- rg-gallery -->
+
+  <p>
+    <%= @profile.description %>
+  </p>
+  <br>
+
+  <div id="subsection">
+    <h2>
+      WHAT WE SELL
+    </h2>
+    <div id="tag">
+      <p>
+        <%= raw @profile.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %> 
+      </p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div id="title">
+  <h2>LOOKING FOR<h2>
+</div>
+<div class="jumbotron">
+  <p>
+    <%= @profile.looking_for %>
+  </p>
+
+  <br>
+
+  <div id="subsection">
+    <h2>BRANDS WE CARRY</h2>
+    <div id="tag">
+      <p>
+        <!-- <%= @profile.stockist %>-->
+      <!-- <%= raw @profile.stockist_list %> -->
+      <%= raw @profile.stockist_list.map { |t| link_to t , profile_path(current_user) } .join(' ') %>
+      <!-- <%= raw @profile.stockist_list.map { |t| link_to t , 'changethistoreferencedprofile' } .join(' ') %> -->
+      </p>
+    </div>
+  </div>
+</div>
+<br>
+
+<% end %>

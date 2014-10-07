@@ -1,3 +1,5 @@
+<% if current_user.profile.is_brand == "true" %>
+
 <%= bootstrap_form_for(@profile, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-4") do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
@@ -13,8 +15,7 @@
 
   <h3>Edit Profile Card</h3>
   <br>
-    <%= f.file_field :cover, label: "Cover Photo"%>
-  <br>
+  <%= f.file_field :cover, label: "Cover Photo"%>
   <%= f.text_area :tagline, label: "Tagline", help: "Limit 100 characters", rows: 4 %>
 
   <br>
@@ -23,9 +24,7 @@
   <br>
   <%= f.text_field :name, label: "Brand Name" %>
 
-  <div class="form-group">
-    <%= f.file_field :avatar, label: "Logo"%>
-  </div>
+  <%= f.file_field :avatar, label: "Logo"%>
 
   <%= f.form_group :is_brand, label: { text: "Type" } do %>
     <%= f.radio_button :is_brand, true, label: "Brand", inline: true %>
@@ -42,4 +41,51 @@
     <%= f.submit "Save changes" %>
   <% end %>
   </div>
+<% end %>
+
+<% else %>
+
+<%= bootstrap_form_for(@profile, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-4") do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Edit Profile Card</h3>
+  <br>
+  <%= f.file_field :cover, label: "Cover Photo"%>
+  <%= f.text_area :tagline, label: "Tagline", help: "Limit 100 characters", rows: 4 %>
+
+  <br>
+
+  <h3>Edit Company Profile</h3>
+  <br>
+  <%= f.text_field :name, label: "Retailer Name" %>
+
+  <%= f.file_field :avatar, label: "Logo"%>
+
+  <%= f.form_group :is_brand, label: { text: "Type" } do %>
+    <%= f.radio_button :is_brand, true, label: "Brand", inline: true %>
+    <%= f.radio_button :is_brand, false, label: "Retailer", inline: true %>
+  <% end %>
+
+  <%= f.text_field :website, label: "Website" %>
+  <%= f.text_field :location, label: "Location"%>
+  <%= f.text_area :description, label: "About Us", help: "Write a description of your brand or company.", rows: 4 %>
+  <%= f.text_field :tag_list, label: "What We Sell", help: "What kind of things do you sell? (separated by commas)" %>
+  <%= f.text_area :looking_for, label: "Looking For", help: "Describe the brands or people that you are looking to work with.", rows: 4 %>
+  <%= f.text_field :stockist_list, label: "Brands", help: "What brands do you carry?" %>
+  <%= f.form_group do %>
+    <%= f.submit "Save changes" %>
+  <% end %>
+  </div>
+<% end %>
+
 <% end %>
