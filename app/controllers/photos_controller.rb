@@ -13,11 +13,13 @@ class PhotosController < ApplicationController
   def show
     #@profile = Profile.find(params[:id])
     @photo = Photo.find(params[:id])
+
   end
 
   # GET /photos/new
   def new
     @photo = current_user.profile.photos.build
+
   end
 
   # GET /photos/1/edit
@@ -38,13 +40,14 @@ class PhotosController < ApplicationController
 
   # PATCH/PUT /photos/1
   def update
-    respond_to do |format|
+    #respond_to do |format|
       if @photo.update(photo_params)
         redirect_to @photo, notice: 'Photo was successfully updated.'
       else
         render action: 'edit'
       end
-    end
+    
+    #end
   end
 
   # DELETE /photos/1

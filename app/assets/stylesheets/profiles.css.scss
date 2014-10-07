@@ -359,3 +359,22 @@ margin-bottom: 20px;
 overflow: hidden;
 background: none;
 }
+
+div.es-carousel > ul {
+	display: inline;
+	margin-left: 0px;
+	width: 154px;
+}
+
+.es-carousel ul li a {
+display: block;
+border-style: none;
+border-color: #222;
+opacity: 0.8;
+-webkit-touch-callout: none;
+-webkit-transition: all 0.2s ease-in-out;
+-moz-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+-ms-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
