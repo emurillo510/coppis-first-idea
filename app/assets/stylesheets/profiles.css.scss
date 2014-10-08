@@ -82,7 +82,13 @@ left:0px;
 
 #location {
 	position: absolute;
-	bottom: 10px;
+	bottom: 8px;
+	color: #bdc3c7;
+}
+
+#type {
+	position: absolute;
+	bottom: 25px;
 	color: #bdc3c7;
 }
 
@@ -310,7 +316,7 @@ left:0px;
 }
 
 .panel-body {
-	padding-top: 10px;
+	padding-top: 8px;
   padding-right: 15px;
   padding-bottom: 15px;
   padding-left: 15px;

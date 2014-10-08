@@ -19,5 +19,8 @@
     <tr>
       <td><%= @profile.website %></td>
     </tr>
+    <tr>
+      <td><% if @profile.is_brand == true %>Brand<% else %>Retailer<% end %></td>
+    </tr>
   </table>
 </div>

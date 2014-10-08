@@ -18,6 +18,7 @@
         <p><strong><%= profile.name %></strong></p>
         <%= truncate profile.tagline, length: 100 %><br>
         <br>
+        <div id="type"><% if profile.is_brand == true %>Brand<% else %>Retailer<% end %></div>
         <div id="location">
           <%= profile.location %>
         </div><br>
