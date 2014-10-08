@@ -2,7 +2,7 @@
 
 <h3>Enter Company Info</h3>
 <br>
-<% if current_user.profile.is_brand == "true" %>
+<% if @profile.is_brand == true %>
 
 <%= bootstrap_form_for(@profile, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-4") do |f| %>
   <% if @profile.errors.any? %>
