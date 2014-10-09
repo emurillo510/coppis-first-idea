@@ -19,7 +19,7 @@ Cproject::Application.routes.draw do
   get "brands" => "brands#index"
   get "retailers" => "retailers#index"
   get "photos" => "photos#index"
-  get 'tags/:tag', to: 'profiles#index', as: :tag
+  get 'category/:tag', to: 'profiles#index', as: :tag
   get 'stockists/:stockists', to: 'profiles#index', as: :stockist
   get 'profiles/:id/overview' => 'profiles#get_overview', as: 'profile_get_overview'
   get 'profiles/:id/get-news' =>  'profiles#get_news', as: 'profile_get_news' 
