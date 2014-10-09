@@ -17,6 +17,17 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @microposts = @profile.microposts.paginate(page: params[:page])
     @photos = @profile.photos
+
+    @stockist_profiles = []
+    @stockist_profiles_nil = []
+    @profile.stockist_list.each do |s|
+      profile = Profile.find_by name: s
+        if !profile.nil?
+           @stockist_profiles.push(profile)
+        elsif
+           @stockist_profiles_nil.push(s)
+        end
+    end
   end
 
   # GET /profiles/new

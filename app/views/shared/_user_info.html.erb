@@ -5,6 +5,3 @@
 <span>
   <%= link_to "view my profile", profile_path(current_user, @profile) %>
 </span>
-<span>
-  <%= pluralize(@profile.microposts.count, "update") %>
-</span>
