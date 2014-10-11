@@ -1,14 +1,13 @@
 <div class="container">
 <div id="browse">
   <ul class="nav nav-pills">
-    <li class="title">Retailers</li>
-    <%= content_tag(:li, link_to('Featured', retailers_featured_path),
-                    :class => 'unselected') %>
-    <%= content_tag(:li, link_to('Trending', retailers_trending_path),
-                    :class => 'unselected') %>
-    <%= content_tag(:li, link_to('All', retailers_path),
-                    :class => 'selected') %>
-
+    <li class="title">Brands</li>
+    <% content_tag(:li, :class => 'unselected') do %>
+       <%= link_to('Featured', brands_featured_path) %>
+    <% end %>
+    <li class="unselected"><% link_to "Featured", brands_featured_path %></li>
+    <li class="unselected"><a href="#">Trending</a></li>
+    <li class="selected"><a href="#">All</a></li></div>
   </ul>
 </div>
 <br>

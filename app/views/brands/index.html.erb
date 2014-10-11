@@ -2,9 +2,12 @@
 <div id="browse">
   <ul class="nav nav-pills">
     <li class="title">Brands</li>
-    <li class="unselected"><a href="#">Featured</a></li>
-    <li class="unselected"><a href="#">Trending</a></li>
-    <li class="selected"><a href="#">All</a></li></div>
+    <%= content_tag(:li, link_to('Featured', brands_featured_path),
+                :class => 'unselected') %>
+    <%= content_tag(:li, link_to('Trending', brands_trending_path),
+                :class => 'unselected') %>
+    <%= content_tag(:li, link_to('All', brands_path),
+                   :class => 'selected') %>
   </ul>
 </div>
 <br>

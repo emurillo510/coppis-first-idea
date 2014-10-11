@@ -1,0 +1,36 @@
+<div class="container">
+  <div id="browse">
+     <ul class="nav nav-pills">
+       <li class="title">Brands</li>
+       <%= content_tag(:li, link_to('Featured', brands_featured_path),
+                   :class => 'unselected') %>
+       <%= content_tag(:li, link_to('Trending', brands_trending_path),
+                   :class => 'selected') %>
+       <%= content_tag(:li, link_to('All', brands_path),
+                   :class => 'unselected') %>
+
+     </ul>
+  </div>
+  <br>
+  <div id="cards" class="transitions-enabled">
+    <% @profiles.each do |profile| %>
+      <div class="box panel panel-default">
+        <%= link_to content_tag(:span), profile %>
+        <%= image_tag profile.cover.url(:medium) %>
+        <div id="avatar-card"><%= image_tag profile.avatar.url(:thumb) %></div>
+        <div class="panel-body">
+          <p><strong><%= profile.name %></strong></p>
+          <%= truncate profile.tagline, length: 100 %><br>
+          <br>
+          <div id="type"><% if profile.is_brand == true %>Brand<% else %>Retailer<% end %></div>
+          <div id="location">
+            <%= profile.location %>
+          </div><br>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="center">
+    <%= will_paginate @profiles, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

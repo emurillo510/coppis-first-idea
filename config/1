@@ -17,11 +17,8 @@ Cproject::Application.routes.draw do
   get "profile" => "pages#profile"
   get "news" => "pages#news"
   get "brands" => "brands#index"
-  get "brands/featured" => "brands#featured"
-  get "brands/trending" => "brands#trending"
+  get "brands/featured" => "brands#get_featured"
   get "retailers" => "retailers#index"
-  get "retailers/featured" => "retailers#featured"
-  get "retailers/trending" => "retailers#trending"
   get "photos" => "photos#index"
   get 'category/:tag', to: 'profiles#index', as: :tag
   get 'stockists/:stockists', to: 'profiles#index', as: :stockist

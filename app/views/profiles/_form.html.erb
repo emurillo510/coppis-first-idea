@@ -13,6 +13,18 @@
     </div>
   <% end %>
 
+  <%= f.form_group :featured, label: { text: "Featured" } do %>
+      <%= f.radio_button :featured, true, label: "yes", inline: true %>
+      <%= f.radio_button :featured, false, label: "no", inline: true %>
+  <% end %>
+
+  <%= f.form_group :trending, label: { text: "Trending" } do %>
+        <%= f.radio_button :trending, true, label: "yes", inline: true %>
+        <%= f.radio_button :trending, false, label: "no", inline: true %>
+  <% end %>
+
+
+
   <h3>Edit Profile Card</h3>
   <br>
   <%= f.file_field :cover, label: "Cover Photo"%>
@@ -57,6 +69,18 @@
       </ul>
     </div>
   <% end %>
+
+  <%= f.form_group :featured, label: { text: "Featured" } do %>
+      <%= f.radio_button :featured, true, label: "yes", inline: true %>
+      <%= f.radio_button :featured, false, label: "no", inline: true %>
+  <% end %>
+
+  <%= f.form_group :trending, label: { text: "Trending" } do %>
+     <%= f.radio_button :trending, true, label: "yes", inline: true %>
+     <%= f.radio_button :trending, false, label: "no", inline: true %>
+  <% end %>
+
+ 
 
   <h3>Edit Profile Card</h3>
   <br>
