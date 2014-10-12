@@ -21,6 +21,9 @@ module Cproject
     # config.i18n.default_locale = :de
 
     # Required for Heroku
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
+
+    # Custom 404 error
+    config.exceptions_app = self.routes
   end
 end
