@@ -3,7 +3,7 @@
   <p>Connecting brands and retailers.</p>
 </div>
 
-<div id="form" class="panel-body">
+<div id="form">
   <%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     <%= f.email_field :email, autofocus: true, hide_label: :true, placeholder: "Email" %>
@@ -17,5 +17,11 @@
     <div class="panel-footer">
       <%= render "devise/shared/links" %>
     </div>
+    <br>
+    <p>Disclaimer: This is only a demo of Coppis. All accounts and data in this demo are seeded for demostrative purposes. They are not real accounts. Any account and data entered may be deleted at anytime.</p>
   <% end %>
+
+  <div id="bg">
+    <%= image_tag(asset_path('landingimage.jpg')) %>
+  </div>
 </div>

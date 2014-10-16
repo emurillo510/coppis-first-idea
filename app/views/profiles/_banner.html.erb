@@ -8,6 +8,11 @@
   <br>
 <div class="jumbotron">
   <div id="follow-btn"><%= render 'follow_form' if user_signed_in? %></div>
+  <div id="email-btn">
+    <%= mail_to @profile.user.email do %>
+    <%= content_tag :strong, 'Email Us', class: 'btn btn-large btn-primary' %>
+    <% end %>
+  </div>
   <div class="profile-avatar"><%= image_tag @profile.avatar.url(:medium) %></div>
   <table>
     <tr>
