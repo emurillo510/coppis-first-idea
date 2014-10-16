@@ -1,55 +1,58 @@
 <div class="jumbo">
 <% if user_signed_in? && !current_user.profile.nil? %>
-	<div class="row">
+  <div class="row">
     <aside class="col-md-4">
-    	<div class="panel panel-body">
-    		<div class="panel-header">
-		    	<section>
-				    <%= render 'shared/user_info' %>
-				  </section>
-				</div>
-				<div class="panel-body">
-				  <section>
-				    <%= render 'shared/stats' %>
-				  </section>
-				</div>
-			  <section>
-			    <%= render 'shared/micropost_form' %>
-			  </section>
-			</div>
-		</aside>
-		<div class="panel panel-default col-md-8">
-		  <div class="panel-header"><h3>News Feed</h3></div>
-		  <div class="panel-body feed">
-		  	<%= render 'shared/feed' %>
-		  </div>
-		</div>
-	</div>
+      <div class="panel panel-body">
+        <div class="panel-header">
+          <section>
+            <%= render 'shared/user_info' %>
+          </section>
+        </div>
+        <div class="panel-body">
+          <section>
+            <%= render 'shared/stats' %>
+          </section>
+        </div>
+        <section>
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </div>
+    </aside>
+    <div class="panel panel-default col-md-8">
+      <div class="panel-header"><h3>News Feed</h3></div>
+      <div class="panel-body feed">
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+  </div>
 <% else %>
-	<div id="coppis" class="panel-heading">
-		<h1>Coppis</h1>
-		<p>Connecting brands and retailers.</p>
-	</div>
+  <div id="coppis" class="panel-heading">
+  <h1>Coppis</h1>
+  <p>Connecting brands and retailers.</p>
+</div>
 
-	<div id="form">
-		<%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-		  <%= devise_error_messages! %>
-		  <%= f.email_field :email, autofocus: true, hide_label: :true, placeholder: "Email" %>
-		  <%= f.password_field :password, hide_label: :true, placeholder: "Password" %>
-		  <%= f.form_group do %>
-		  	<p><%= f.check_box :remember_me %></p>
-		  <% end %>
-		  <%= f.form_group do %>
-		  	<%= f.submit "Sign up", class: "btn btn-default" %>
-		  <% end %>
-		  <br>
-		  <p>Disclaimer: This is only a demo of Coppis. All accounts and data in this demo are seeded for demostrative purposes. They are not real accounts. Any account and data entered may be deleted at anytime.</p>
-		<% end %>
-	</div>
+<div id="form">
+  <%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.email_field :email, autofocus: true, hide_label: :true, value: "owner@blackscale.com" %>
+    <%= f.password_field :password, hide_label: :true, value: "password" %>
+    <%= f.form_group do %>
+      <p><%= f.check_box :remember_me %></p>
+    <% end %>
+    <%= f.form_group do %>
+      <%= f.submit "START DEMO", class: "btn btn-success" %>
+    <% end %>
+    <div class="panel-footer">
+      <%= render "devise/shared/links" %>
+    </div>
+    <br>
+    <p>Disclaimer: This is only a demo of Coppis. All accounts and data in this demo are seeded for demostrative purposes. They are not real accounts. Any account and data entered may be deleted at anytime.</p>
+  <% end %>
 
-	<div id="bg">
-		<%= image_tag(asset_path('landingimage.jpg')) %>
-	</div>
+  <div id="bg">
+    <%= image_tag(asset_path('landingimage.jpg')) %>
+  </div>
+</div>
 
 <% end %>
 </div>

@@ -6,13 +6,13 @@
 <div id="form">
   <%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-    <%= f.email_field :email, autofocus: true, hide_label: :true, placeholder: "Email" %>
-    <%= f.password_field :password, hide_label: :true, placeholder: "Password" %>
+    <%= f.email_field :email, autofocus: true, hide_label: :true, value: "owner@blackscale.com" %>
+    <%= f.password_field :password, hide_label: :true, value: "password" %>
     <%= f.form_group do %>
       <p><%= f.check_box :remember_me %></p>
     <% end %>
     <%= f.form_group do %>
-      <%= f.submit "Sign in", class: "btn btn-default" %>
+      <%= f.submit "START DEMO", class: "btn btn-success" %>
     <% end %>
     <div class="panel-footer">
       <%= render "devise/shared/links" %>
