@@ -1,0 +1,5 @@
+<% unless @profile.user == current_user %>
+	<%= mail_to @profile.user.email do %>
+    <%= content_tag :strong, 'Email Us', class: 'btn btn-large btn-primary' %>
+  <% end %>
+<% end %>
