@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 h2 {
 	font-size: medium;
 }
@@ -374,8 +376,10 @@ background: none;
 
 div.es-carousel > ul {
     position: relative;
-    top: 10px;
-    white-space:nowrap;
+    top: 5px;
+	margin:0;
+	padding:0;
+
 }
 
 .es-carousel ul li a {
@@ -389,6 +393,7 @@ opacity: 0.8;
 -o-transition: all 0.2s ease-in-out;
 -ms-transition: all 0.2s ease-in-out;
 transition: all 0.2s ease-in-out;
+
 }
 
 .rg-image {
@@ -422,3 +427,12 @@ box-shadow: none;
 .rg-loading{
 	background:none;
 }
+
+/*-- Start here --*/
+
+/* CSS reset */
+
+
+
+
+
