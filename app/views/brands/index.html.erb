@@ -18,15 +18,19 @@
       <%= image_tag profile.cover.url(:medium) %>
       <div id="avatar-card"><%= image_tag profile.avatar.url(:thumb) %></div>
       <div class="panel-body">
-        <p><strong><%= profile.name %></strong></p>
-        <%= truncate profile.tagline, length: 100 %><br>
+        <div id="card-name"><p><strong><%= profile.name %></strong></p></div>
+        <div id="card-tagline"><p><%= truncate profile.tagline, length: 100 %></p></div><br>
         <br>
         <div id="type"><% if profile.is_brand == true %>Brand<% else %>Retailer<% end %></div>
         <div id="location">
           <%= profile.location %>
         </div><br>
       </div>
+      <div id="card-follow-btn">
+      <%= content_tag :strong, 'Follow', class: 'btn btn-large btn-primary' %>
     </div>
+    </div>
+    
   <% end %>
 </div>
 <div class="center">

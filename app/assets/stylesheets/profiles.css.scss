@@ -313,8 +313,8 @@ left:0px;
 }
 
 #avatar-card img {
-	width: 42px;
-	height: 42px;
+	width: 44px;
+	height: 44px;
 	position: absolute;
   top: 188px;
  	left: 14px;
@@ -330,9 +330,27 @@ left:0px;
   padding-left: 15px;
 }
 
-.panel-body p {
+#card-name p {
+	line-height: 1;
 	margin-left: 50px;
 	margin-bottom: 0;
+	position: absolute;
+  top: 203px;
+}
+
+#card-tagline p {
+	line-height: 1.2;
+	position: absolute;
+  top: 236px;
+ 	left: 15px;
+ 	font-size: 1em;
+ 	margin-right: 10px;
+}
+
+#card-follow-btn {
+	position: absolute;
+  bottom: 10px;
+ 	right: 10px;
 }
 
 .title {
