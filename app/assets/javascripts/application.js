@@ -27,3 +27,4 @@
 //= require jquery/jquery.elastislide
 //= require jquery/jquery.tmpl.min
 //= require_tree .
+//= require microposts

@@ -233,12 +233,33 @@ input {
   height: 2px;
   width: 2px;
 }
+
+/* Micropost character countdown
+
+.remaining, .countdown {
+  display: inline;
+  /*color: #  grayLight;
+  float: right;
+}
+
+.overlimit {
+  color: $red;
+}
+
+.almostlimit {
+  color: hsl(360, 57%, 21%);
+}
+
+.nearlimit {
+  color: $gray;
+} */
+
 aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
   }
-}
+} 
 
 /* footer */
 
