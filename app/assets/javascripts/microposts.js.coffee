@@ -9,7 +9,7 @@ updateCountdownAttributes = (toRemove, toAdd = null) ->
       $("input.btn.btn-large.btn-primary").removeAttr("disabled")
 
 updateCountdown = ->
-  remaining = 140 - $("#micropost_content").val().length
+  remaining = 200 - $("#micropost_content").val().length
   toRemove = ["nearlimit", "almostlimit", "overlimit"]
   if remaining > 19
     updateCountdownAttributes(toRemove)
@@ -25,7 +25,7 @@ updateCountdown = ->
   $(".countdown").text remaining
 
 $(document).ready ->
-  $(".countdown").text 140
+  $(".countdown").text 200
   $("#micropost_content").change updateCountdown
   $("#micropost_content").keyup updateCountdown
   $("#micropost_content").keydown updateCountdown

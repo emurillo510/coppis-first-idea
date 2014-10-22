@@ -234,16 +234,16 @@ input {
   width: 2px;
 }
 
-/* Micropost character countdown
+/* Micropost character countdown */
 
 .remaining, .countdown {
   display: inline;
-  /*color: #  grayLight;
+  /*color: #  grayLight; */
   float: right;
 }
 
 .overlimit {
-  color: $red;
+  /* color: $red; */
 }
 
 .almostlimit {
@@ -252,14 +252,14 @@ input {
 
 .nearlimit {
   color: $gray;
-} */
+}
 
 aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
   }
-} 
+}
 
 /* footer */
 

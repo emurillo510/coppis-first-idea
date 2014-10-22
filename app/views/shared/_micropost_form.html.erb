@@ -1,23 +1,15 @@
-<!--<%= form_for Micropost.new do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Post an update..." %>
-    
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-
-<% end %> -->
-
-<%= form_for @micropost do |f| %>
+<%= form_for Micropost.new do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Post an update..." %>
   </div>
   <span>
-    <div class="remaining">
+   <div class="remaining">
       <%= t('.characters_remaining').html_safe %>
     </div>
     <div class="countdown" > </div>
   </span>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+
+<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+
 <% end %>
