@@ -7,6 +7,9 @@ $navbar-default-link-hover-color: 		white;
 $navbar-default-brand-color: 					white;
 $jumbotron-bg: 												white;
 $brand-primary:                				lighten(#000, 30%);
+$grayLight:                           gray;
+$red:                                 red;
+
 
 @import "bootstrap";
 
@@ -238,12 +241,13 @@ input {
 
 .remaining, .countdown {
   display: inline;
-  /*color: #  grayLight; */
-  float: right;
+  color: $grayLight;
+  float: left;
+  padding-left: 7px;
 }
 
 .overlimit {
-  /* color: $red; */
+ color: $red;
 }
 
 .almostlimit {
@@ -289,4 +293,8 @@ footer ul li {
   margin-left: 10px;
 }
 
+#MicropostButton {
+  padding-top:19px;
+  padding-left:7px
+}
 

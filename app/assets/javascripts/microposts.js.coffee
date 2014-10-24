@@ -13,7 +13,7 @@ updateCountdown = ->
   toRemove = ["nearlimit", "almostlimit", "overlimit"]
   if remaining > 19
     updateCountdownAttributes(toRemove)
-  if remaining < 20
+  if remaining < 19
     toAdd = (toRemove.filter (attr) -> attr is "nearlimit").toString()
     updateCountdownAttributes(toRemove, toAdd)
   if remaining < 11
