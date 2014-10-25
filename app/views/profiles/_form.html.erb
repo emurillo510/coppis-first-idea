@@ -34,7 +34,7 @@
 
   <h3>Edit Company Profile</h3>
   <br>
-  <%= f.text_field :name, label: "Brand Name" %>
+  <%= f.text_field :name, :required => true, label: "Brand Name", help: "*required field"%> 
 
   <%= f.file_field :avatar, label: "Logo"%>
 
@@ -45,7 +45,7 @@
 
   <%= f.text_field :website, label: "Website" %>
   <%= f.text_field :location, label: "Location"%>
-  <%= f.text_area :description, label: "About Us", help: "Write a description of your brand or company.", rows: 4, maxlength: 1000 %>
+  <%= f.text_area :description, label: "About Us", help: "Write a description of your brand or company (Limit 1000 characters)", rows: 4, maxlength: 1000 %>
   <%= f.text_field :tag_list, label: "What We Make", help: "What kind of things do you make? (separated by commas)" %>
   <%= f.text_area :looking_for, label: "Looking For", help: "Describe the stores, retailers, or people that you are looking to work with.", rows: 4 %>
   <%= f.text_field :stockist_list, label: "Stockists", help: "What stores carry your brand?" %>
