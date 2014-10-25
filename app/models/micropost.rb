@@ -1,7 +1,7 @@
 class Micropost < ActiveRecord::Base
 	belongs_to :profile
 	default_scope -> { order('created_at DESC') }
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true, length: { maximum: 200 }
   validates :profile_id, presence: true
 
   # Returns microposts from the users being followed by the given user.
