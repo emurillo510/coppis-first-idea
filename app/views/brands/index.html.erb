@@ -26,9 +26,10 @@
           <%= profile.location %>
         </div><br>
       </div>
-      <div id="card-follow-btn">
-        <%= content_tag :strong, 'Follow', class: 'btn btn-large btn-primary' %>
-      </div>
+    
+ 
+        <div id="follow-btn2"> <%= render :partial => 'follow_form', locals: { :this_profile =>  profile} if user_signed_in? %></div>
+    
     </div>
     
   <% end %>

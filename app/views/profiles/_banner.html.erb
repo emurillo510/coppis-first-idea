@@ -7,7 +7,7 @@
   </div>
   <br>
 <div class="jumbotron">
-  <div id="follow-btn"><%= render 'follow_form' if user_signed_in? %></div>
+  <div class="follow-btn"><%= render 'follow_form' if user_signed_in? %></div>
   <div id="email-btn"><%= render 'email_form' if user_signed_in? %></div>
   <div class="profile-avatar"><%= image_tag @profile.avatar.url(:medium) %></div>
   <table>
