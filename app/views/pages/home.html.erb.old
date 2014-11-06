@@ -34,18 +34,19 @@
 <div id="form">
   <%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-    <%= f.email_field :email, autofocus: true, hide_label: :true %>
-    <%= f.password_field :password, hide_label: :true %>
+    <%= f.email_field :email, autofocus: true, hide_label: :true, value: "owner@blackscale.com" %>
+    <%= f.password_field :password, hide_label: :true, value: "password" %>
     <%= f.form_group do %>
       <p><%= f.check_box :remember_me %></p>
     <% end %>
     <%= f.form_group do %>
-      <%= f.submit "Sign In", class: "btn btn-success" %>
+      <%= f.submit "START DEMO", class: "btn btn-success" %>
     <% end %>
     <div class="panel-footer">
       <%= render "devise/shared/links" %>
     </div>
     <br>
+    <p>Disclaimer: This is only a demo of Coppis. All accounts and data in this demo are seeded for demonstration purposes. They are not real accounts. Any account and data entered may be deleted at anytime.</p>
   <% end %>
 
   <div id="bg">
